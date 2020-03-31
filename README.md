@@ -1,6 +1,6 @@
 # Auto Scaling Group monitoring
 
-Adds alarms to monitor CPU and storage, and forwards them to Slack managed by [marbot](https://marbot.io/).
+Connects you to CloudWatcgh Events of a particular Auto Scaling Group, adds alarms to monitor CPU and storage, and forwards them to Slack managed by [marbot](https://marbot.io/).
 
 ## Usage
 
