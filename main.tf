@@ -95,7 +95,7 @@ resource "aws_cloudwatch_event_rule" "monitoring_jump_start" {
   depends_on = [aws_sns_topic_subscription.marbot]
   count      = var.enabled ? 1 : 0
 
-  description         = "Monitoring Jump Start connection (created by marbot)"
+  description         = "Monitoring Jump Start connection. (created by marbot)"
   schedule_expression = "rate(30 days)"
   tags                = var.tags
 }
@@ -135,7 +135,7 @@ resource "aws_cloudwatch_metric_alarm" "cpu_utilization" {
   count      = (var.cpu_utilization_threshold >= 0 && var.enabled) ? 1 : 0
 
   alarm_name          = "marbot-asg-cpu-utilization-${random_id.id8.hex}"
-  alarm_description   = "Average CPU utilization over last 10 minutes too high (created by marbot)."
+  alarm_description   = "Average CPU utilization over last 10 minutes too high. (created by marbot)"
   namespace           = "AWS/EC2"
   metric_name         = "CPUUtilization"
   statistic           = "Average"
@@ -183,7 +183,7 @@ resource "aws_cloudwatch_metric_alarm" "ebs_io_credit_balance" {
   count      = (var.ebs_io_credit_balance_threshold >= 0 && var.enabled) ? 1 : 0
 
   alarm_name          = "marbot-asg-ebs-io-credit-balance-${random_id.id8.hex}"
-  alarm_description   = "Average EBS IO credit balance over last 10 minutes too low, expect a significant performance drop soon (created by marbot)."
+  alarm_description   = "Average EBS IO credit balance over last 10 minutes too low, expect a significant performance drop soon. (created by marbot)"
   namespace           = "AWS/EC2"
   metric_name         = "EBSIOBalance%"
   statistic           = "Average"
@@ -207,7 +207,7 @@ resource "aws_cloudwatch_metric_alarm" "ebs_throughput_credit_balance" {
   count      = (var.ebs_throughput_credit_balance_threshold >= 0 && var.enabled) ? 1 : 0
 
   alarm_name          = "marbot-asg-ebs-throughput-credit-balance-${random_id.id8.hex}"
-  alarm_description   = "Average EBS throughput credit balance over last 10 minutes too low, expect a significant performance drop soon (created by marbot)."
+  alarm_description   = "Average EBS throughput credit balance over last 10 minutes too low, expect a significant performance drop soon. (created by marbot)"
   namespace           = "AWS/EC2"
   metric_name         = "EBSByteBalance%"
   statistic           = "Average"
@@ -234,7 +234,7 @@ resource "aws_cloudwatch_event_rule" "unsuccessful" {
   depends_on = [aws_sns_topic_subscription.marbot]
   count      = var.enabled ? 1 : 0
 
-  description   = "EC2 Auto Scaling failed to launch or terminate an instance (created by marbot)."
+  description   = "EC2 Auto Scaling failed to launch or terminate an instance. (created by marbot)"
   tags          = var.tags
   event_pattern = <<JSON
 {
