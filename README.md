@@ -1,6 +1,6 @@
 # Auto Scaling Group monitoring
 
-Connects you to CloudWatch Events of a particular Auto Scaling Group, adds alarms to monitor CPU and storage, and forwards them to Slack managed by [marbot](https://marbot.io/).
+Connects you to CloudWatch Events of a particular Auto Scaling Group, adds alarms to monitor CPU and storage, and forwards them to Slack or Microsoft Teams managed by [marbot](https://marbot.io/).
 
 ## Usage
 
@@ -13,7 +13,7 @@ module "marbot-monitoring-asg" {
   source   = "marbot-io/marbot-monitoring-asg/aws"
   #version = "x.y.z"         # we recommend to pin the version
 
-  endpoint_id              = "" # to get this value, select a Slack channel where marbot belongs to and send a message like this: "@marbot show me my endpoint id"
+  endpoint_id              = "" # to get this value, select a channel where marbot belongs to and send a message like this: "@marbot show me my endpoint id"
   auto_scaling_group_name  = "" # the ASG name
 }
 ```
