@@ -1,6 +1,6 @@
 # Auto Scaling Group monitoring
 
-Connects you to CloudWatch Events of a particular Auto Scaling Group, adds alarms to monitor CPU and storage, and forwards them to Slack or Microsoft Teams managed by [marbot](https://marbot.io/).
+Connects you to EventBridge of a particular Auto Scaling Group, adds alarms to monitor CPU and storage, and forwards them to Slack or Microsoft Teams managed by [marbot](https://marbot.io/).
 
 ## Usage
 
